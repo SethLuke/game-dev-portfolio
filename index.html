@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio website for Game Dev"/>
+    <title>Game Dev Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/561920b80c.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+               <img src="images/logo.png" class="logo"> 
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Game Design Portfolio</p>
+                <h1>Hi, my name is <br><span>Seth Baatjes</span> and welcome to my portfolio</h1>    
+            </div>
+        </div>
+    </div>
+
+
+<!-------------------------------------------------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-collum-1">
+                <img src="images/user1.jpg">
+            </div>
+            <div class="about-collum-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>I'm student who is currently studying Game design at SAE. I enjoy anime, games and spending time with my friends and family. </p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onclick="opentab('hobbies')">Hobbies</p>
+                </div>  
+                 <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Blender </span><img src="images/blender.png" width="32" height="32"><br>Modeling Assests</li>
+                        <li><span>Unity </span><img src="images/unity-dark.png" width="32" height="32"><br>Creating games using Unity</li>
+                        <li><span>Krita </span><img src="images/krita-dark.png" width="32" height="32"><br>Creating sketches for Assests</li>
+                        <li><span>HTML </span><img src="images/css-light.png" width="32" height="40"></i><br>Creating Websites</li>
+                    </ul>
+                 </div> 
+                 <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2026</span><br>Studing for Bachelors Degree</li>
+                        <li><span>2024</span><br>Higher-Certificate in Game Design and Production</li>
+                    </ul>
+                 </div>
+                 <div class="tab-contents" id="hobbies">
+                    <ul>
+                        <li><span>Indoor</span><br>Playing games, Gym, Reading<br></li>
+                        <li><span>Outdoor</span><br>Soccer, Swimming, Tennis, Jogging, Hiking, Camping</li>
+                    </ul>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-------------------------------------------------------->
+
+<div id="projects">
+    <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="project-list">
+            <div class="project">
+                <img src="images/donut.png">
+                <div class="layer">
+                    <h3>Donut</h3>
+                    <p>Donuts and plate made and rendered using Blender.</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="project">
+                <img src="images/project6.png">
+                <div class="layer">
+                    <h3>2D Platformer</h3>
+                    <p>Game created using the Unity Engine for an assignment.</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="project">
+                <img src="images/chair.png">
+                <div class="layer">
+                    <h3>Chair</h3>
+                    <p>Model of a chair made and rendered using Blender</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-------------------------------------------------------->
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-envelope"></i> example@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> 0123456789</p>
+                <div class="social-icons">
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-discord"></i></a>
+                    <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-square-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname)
+    {
+        for(tablink of tablinks)
+        {
+        tablink.classList.remove("active-link");
+        }
+    for(tabcontent of tabcontents)
+        {
+        tabcontent.classList.remove("active-tab");
+        }
+
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+
+</script>
+
+<script>
+
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu()
+    {
+        sidemenu.style.right = "0";
+    }
+    function closemenu()
+    {
+        sidemenu.style.right = "-200px";
+    }
+
+</script>
+
+</body>
+</html>
